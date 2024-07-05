@@ -36,7 +36,9 @@ pre-commit install
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_postgresql"></a> [postgresql](#provider\_postgresql) | 1.22.0 |
 
 ## Modules
 
@@ -44,14 +46,21 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [postgresql_database.simple](https://registry.terraform.io/providers/cyrilgdn/postgresql/1.22.0/docs/resources/database) | resource |
+| [postgresql_extension.assets_postgis](https://registry.terraform.io/providers/cyrilgdn/postgresql/1.22.0/docs/resources/extension) | resource |
+| [postgresql_grant.revoke_database](https://registry.terraform.io/providers/cyrilgdn/postgresql/1.22.0/docs/resources/grant) | resource |
+| [postgresql_schema.schemas](https://registry.terraform.io/providers/cyrilgdn/postgresql/1.22.0/docs/resources/schema) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_databases"></a> [databases](#input\_databases) | List of databases that will be created. | `list(string)` | n/a | yes |
 | <a name="input_provider_config"></a> [provider\_config](#input\_provider\_config) | n/a | `map(any)` | <pre>{<br>  "connect_timeout": "22",<br>  "database": "postgres",<br>  "host": "postgres",<br>  "port": "5432",<br>  "sslmode": "disable",<br>  "superuser": false,<br>  "username": "postgres"<br>}</pre> | no |
 | <a name="input_provider_pass"></a> [provider\_pass](#input\_provider\_pass) | n/a | `string` | n/a | yes |
+| <a name="input_schemas"></a> [schemas](#input\_schemas) | Map of schemas to be created in a specific database. | `map(object({ database = string }))` | `{}` | no |
 
 ## Outputs
 

@@ -15,4 +15,18 @@ module "postgres" {
     superuser       = false
   }
   provider_pass = "letmein"
+
+  databases = [
+    "db1",
+    "db2",
+    "db3",
+  ]
+  schemas = {
+    schema1 = {
+      database = "db1"
+    }
+    schema2 = {
+      database = "db2"
+    }
+  }
 }

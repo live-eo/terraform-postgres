@@ -16,3 +16,14 @@ variable "provider_pass" {
   type      = string
   sensitive = true
 }
+
+variable "databases" {
+  description = "List of databases that will be created."
+  type        = list(string)
+}
+
+variable "schemas" {
+  description = "Map of schemas to be created in a specific database."
+  type        = map(object({ database = string }))
+  default     = {}
+}
